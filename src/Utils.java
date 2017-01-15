@@ -1,5 +1,6 @@
 import javax.crypto.Cipher;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 import java.io.ObjectOutputStream;
@@ -98,15 +99,9 @@ public class Utils {
         }
         return res;
     }
-    public static void write(){
-
+    public static void write(String path , byte[] signatura) throws Exception {
+        ObjectOutputStream ou = new ObjectOutputStream(new FileOutputStream(path));
+        ou.write(signatura);
+        ou.close();
     }
-    public static void read(){
-
-    }
-    public static void concatenateByteArrays(){
-
-    }
-
-
 }

@@ -8,10 +8,10 @@ public class RSA {
 
     public static final String PRIVATE_KEY_FILE = "private.key";
 
-    public static final String FITXER_PLA = "planets.xml";
-    public static final String FITXER_SIGNAT = "firmat.xml";
+    public static final String FITXER_PLA = "SignarProva.txt";
+    public static final String FITXER_SIGNAT = "SignatProva.txt";
 
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
 
         KeyPair keyPair = null;
         PrivateKey prik = null;
@@ -66,8 +66,8 @@ public class RSA {
          * concatenateByteArrays: añadimos al final del fichero los bytes de la firma
          * write: vuelve a guardar los bytes en fichero.
          * **/
-    //TODO UTILS WRITE
-        //Utils.write(FITXER_SIGNAT,Utils.concatenateByteArrays(Utils.read(f),encryptdigestionat));
+        Utils.write(FITXER_SIGNAT,encryptdigestionat);
+        System.out.println("Fitxer signat");
     }
 
 }
